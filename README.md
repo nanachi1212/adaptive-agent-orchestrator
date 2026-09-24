@@ -1,3 +1,7 @@
+# 修改（fork）原因
+原本方案很好，但是我是窮人，我怕額度不夠燒，所以自定義改了設定
+原設定用的模型effort比較高，我個人希望採用最低足夠模型，所以才有這個fork
+
 # Adaptive Agent Orchestrator
 
 > 本 README 以中文為主，英文版請見文末。
