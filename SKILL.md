@@ -1,6 +1,6 @@
 ---
 name: adaptive-agent-orchestrator
-description: "判斷是否需要委派 subagent，並依任務的 difficulty 與 risk 選擇最低足夠的 capability tier。適用於 multi-agent coding、code review、debugging、跨模組實作與架構分析；主線能直接完成的小任務不適用。"
+description: "判斷是否需要委派 subagent，並依任務的 difficulty 與 risk 選擇最低足夠的 capability tier。適用於 multi-agent coding、code review、debugging、跨模組實作與架構分析；主線能直接完成的低風險、易驗證小任務不適用。"
 ---
 
 # Adaptive Agent Orchestrator
