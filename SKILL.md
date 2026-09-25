@@ -1,6 +1,6 @@
 ---
 name: adaptive-agent-orchestrator
-description: "讓目前主線優先直接完成工作，只有委派確實有平行、獨立驗證或能力落差價值時才建立 subagent；依任務的 difficulty 與 risk 兩軸選擇最低足夠的 capability tier，而非依工作量或檔案數量升級。必要 capability 暫時不可用時採 capability-based fallback，不整體停止工作；只有高風險任務缺少最低安全能力時才 hard stop。驗證深度依風險調整，push/PR 前執行 secret exposure 檢查。適用於 multi-agent coding、code review、debugging、測試、跨模組實作、架構分析等情境。不假設特定 model 名稱為必要條件，實際 model 與 reasoning mapping 一律以 docs/model-map.md 為準，schema 細節以 docs/runtime-schema.md 為準。"
+description: "判斷是否需要委派 subagent，並依任務的 difficulty 與 risk 選擇最低足夠的 capability tier。適用於 multi-agent coding、code review、debugging、跨模組實作與架構分析；主線能直接完成的低風險、易驗證小任務不適用。"
 ---
 
 # Adaptive Agent Orchestrator
@@ -222,7 +222,7 @@ main orchestrator
 - `run_tests_tier_a_medium`
 - `architecture_analysis_tier_c_high`
 
-只使用小寫字母、數字與底線。**不使用 model slug 命名**（不採 `_sol_max` / `_luna_max` 或 `_<model>_<effort>` 這類寫法），因為那會讓本檔再度依賴具體 model 名稱。實際 model 由 runtime mapping（[`docs/model-map.md`](docs/model-map.md)）決定，`task_name` 只是描述 tier 與 effort 的可見標籤。
+只使用小寫字母、數字與底線。`task_name` 只描述 tier 與 effort，不含 model slug；具體 model mapping 只維護於 [`docs/model-map.md`](docs/model-map.md)。
 
 ## 12. Validation 與整合
 
